@@ -38,6 +38,16 @@ app.get('/products/:id', (req, res) => {
     });
 })
 
+app.get('/productinfo/:id', (req, res) => {
+  axios.get(`http://ec2-13-59-174-32.us-east-2.compute.amazonaws.com:3030/productinfo/${req.params.id}`)
+  .then(results => {
+    res.json(results.data);
+  })
+  .catch(err => {
+    console.log("Error with loading overview");
+  });
+})
+
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
