@@ -13,10 +13,10 @@ class App extends React.Component {
     componentDidMount() {
       window.addEventListener('updateProduct', (event) => {
         this.setState({ productId: event.detail });
-      }, false);
+      }, false); 
     }
 
-    render() {
+    render() { 
       //console.log("is it in window?", window.SimilarOptions)
       return (
         <div>
